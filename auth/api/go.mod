@@ -7,7 +7,4 @@ require (
 	github.com/json-iterator/go v1.1.9
 	github.com/micro/go-micro v1.18.0
 	github.com/micro/go-micro/v2 v2.9.0
-	github.com/COVIDEV/viq-chat-services/jwt v0.0.1
-	github.com/COVIDEV/viq-chat-services/otp v0.0.1
-	github.com/COVIDEV/viq-chat-services/users v0.0.1
 )
