@@ -3,6 +3,7 @@ module github.com/COVIDEV/viq-chat-services/auth/api
 go 1.14
 
 require (
+	github.com/COVIDEV/viq-chat-services/jwt v0.0.0-20200616201343-d997312685e9
 	github.com/gin-gonic/gin v1.6.3
 	github.com/json-iterator/go v1.1.9
 	github.com/micro/go-micro v1.18.0
