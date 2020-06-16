@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.github.romatroskin.viqchat.messages.service.messages;
+
+service ChatMessages {
+	rpc Write(ChatMessage) returns (Response) {}
+	rpc List(ListRequest) returns (Response) {}
+}
+
+enum ChatMessageType {
+    Text = 0;
+    Voice = 1;
+    Video = 2;
+}
+
+message ChatMessage {
+	string id = 1;
+	string channel = 2;
+	string from = 3;
+	string parent = 4;
+	string content = 5;
+	ChatMessageType type = 6;
+	int64 created = 7;
+    int64 updated = 8;
+}
+
+message ListRequest {
+	string channel = 1;
+}
+
+message Response {
+	ChatMessage message = 1;
+	repeated ChatMessage messages = 2;
+}

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package com.github.romatroskin.viqchat.rooms.service.rooms;
+
+service Rooms {
+	rpc Create(CreateRequest) returns (Response) {}
+	rpc List(ListRequest) returns (Response) {}
+}
+
+enum EventType {
+    Unknown = 0;
+    RoomCreated = 1;
+    RoomUpdated = 2;
+    RoomDeleted = 3;
+}
+
+message Event {
+    EventType type = 1;
+    Room room = 2;
+}
+
+message Room {
+	string id = 1;
+	string name = 2;
+	string owner = 3;
+	string topic = 4;
+	int64 created = 5;
+	int64 updated = 6;
+}
+
+message CreateRequest {
+	Room room = 1;
+	repeated string participants = 3;
+}
+
+message ListRequest {
+	string userId = 1;
+}
+
+message Response {
+	Room room = 1;
+	repeated Room rooms = 2;
+}

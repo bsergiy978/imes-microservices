@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.github.romatroskin.viqchat.centrifuge.service.centrifuge;
+
+enum ServiceMessageType {
+    Init = 0;
+    Add = 1;
+    Remove = 2;
+}
+
+message ServiceMessage {
+	ServiceMessageType type = 1;
+	string data = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.github.romatroskin.viqchat.jwt.service.jwt;
+
+service Jwt {
+	rpc Generate(GenerateRequest) returns (GenerateResponse) {}
+}
+
+message GenerateRequest {
+	string id = 1;
+	string phone = 2;
+    string secret = 3;
+}
+
+message GenerateResponse {
+	string token = 1;
+}
+

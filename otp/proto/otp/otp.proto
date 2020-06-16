@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.github.romatroskin.viqchat.otp.service.otp;
+
+service Otp {
+	rpc Generate(GenerateRequest) returns (GenerateResponse) {}
+	rpc Verify(VerifyRequest) returns (VerifyResponse) {}
+}
+
+message GenerateRequest {
+	string phone = 1;
+}
+
+message GenerateResponse {
+	string passcode = 1;
+}
+
+message VerifyRequest {
+    string phone = 1;
+    string passcode = 2;
+}
+
+message VerifyResponse {
+    string token = 1;
+}
