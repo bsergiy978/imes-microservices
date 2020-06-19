@@ -36,6 +36,7 @@ func main() {
 	api := &handler.Handler{Otp: otpService, Jwt: jwtService, Users: usersService, Store: cockroach.NewStore(
 		store.Database("viqchat"),
 		store.Table("access"),
+		store.Nodes("postgresql://root@roach1:26257?sslmode=disable"),
 	)}
 
 	router := gin.Default()

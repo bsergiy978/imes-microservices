@@ -29,6 +29,7 @@ func NewHandler(srv micro.Service) *Rooms {
 		store: cockroach.NewStore(
 			store.Database("viqchat"),
 			store.Table("rooms"),
+			store.Nodes("postgresql://root@roach1:26257?sslmode=disable"),
 		),
 		publisher: micro.NewPublisher(srv.Name(), srv.Client()),
 	}

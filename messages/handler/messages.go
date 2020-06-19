@@ -25,6 +25,7 @@ func NewHandler(srv micro.Service) *ChatMessages {
 		store: cockroach.NewStore(
 			store.Database("viqchat"),
 			store.Table("messages"),
+			store.Nodes("postgresql://root@roach1:26257?sslmode=disable"),
 		),
 	}
 }

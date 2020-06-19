@@ -28,7 +28,7 @@ type Otp struct {
 
 // NewOtpHandler creating OTP service handler.
 func NewOtpHandler(srv micro.Service) *Otp {
-	return &Otp{store: cockroach.NewStore(store.Database("viqchat"), store.Table("otp_secrets"))}
+	return &Otp{store: cockroach.NewStore(store.Database("viqchat"), store.Table("otp_secrets"), store.Nodes("postgresql://root@roach1:26257?sslmode=disable"))}
 }
 
 // Generate is generating OTP passcode.
