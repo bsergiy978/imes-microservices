@@ -1,2 +1,2 @@
 # viq-chat-services
-Chat micro services1211
+Chat micro services
